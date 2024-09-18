@@ -18,7 +18,7 @@ sh ./scripts/complexity.sh "$SONARCLOUD_PROJECT_NAME" "$SONARCLOUD_JWT_TOKEN"
 sh ./scripts/churn.sh "$LOCAL_REPO_FOLDER"
 
 # Check if complexity.json and churn.csv are generated
-if [ ! -f complexity.json ] || [ ! -f churn.csv ]; then
+if [ ! -f tmp/complexity.json ] || [ ! -f tmp/churn.csv ]; then
     echo "Error: complexity.json or churn.csv not generated."
     exit 1
 fi
