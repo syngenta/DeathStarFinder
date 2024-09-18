@@ -5,10 +5,10 @@ import numpy as np
 from numpy.polynomial.polynomial import Polynomial
 
 # Read the churn CSV file
-churn_df = pd.read_csv('../churn.csv', skiprows=3)
+churn_df = pd.read_csv('tmp/churn.csv', skiprows=3)
 
 # Read the complexity JSON file
-with open('../complexity.json', 'r') as f:
+with open('tmp/complexity.json', 'r') as f:
     complexity_data = json.load(f)
 
 # Extract relevant data from the JSON
@@ -49,7 +49,13 @@ plt.xlabel('Churn (Lines Changed)')
 plt.ylabel('Complexity')
 plt.grid(True)
 plt.legend()
+
+# Save the plot as an image file
+plt.savefig('complexity_vs_churn_plot.png')
+
 plt.show()
+
+
 
 if __name__ == '__main__':
     pass

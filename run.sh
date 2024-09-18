@@ -11,9 +11,11 @@ LOCAL_REPO_FOLDER=$1
 SONARCLOUD_PROJECT_NAME=$2
 SONARCLOUD_JWT_TOKEN=$3
 
+mkdir -p ./tmp
+
 # Run complexity.sh and churn.sh scripts
-.scripts/complexity.sh "$SONARCLOUD_PROJECT_NAME" "$SONARCLOUD_JWT_TOKEN"
-.scripts/churn.sh "$LOCAL_REPO_FOLDER"
+sh ./scripts/complexity.sh "$SONARCLOUD_PROJECT_NAME" "$SONARCLOUD_JWT_TOKEN"
+sh ./scripts/churn.sh "$LOCAL_REPO_FOLDER"
 
 # Check if complexity.json and churn.csv are generated
 if [ ! -f complexity.json ] || [ ! -f churn.csv ]; then

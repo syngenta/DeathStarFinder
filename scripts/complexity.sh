@@ -14,4 +14,4 @@ curl "https://sonarcloud.io/api/measures/component_tree?additionalFields=metrics
 -H "Accept: application/json" \
 -H "Accept-Encoding: gzip, deflate, br, zstd" \
 -H "Cookie:JWT-SESSION=${JWT_SESSION};" \
--o complexity.json
+-o tmp/complexity.json
