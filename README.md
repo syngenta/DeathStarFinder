@@ -8,7 +8,24 @@ This project is designed to analyze code complexity and churn, and generate visu
 - pip (Python package installer)
 - SonarCloud account and project
 
-## Installation
+## Usage
+1. Run the `run.sh` script with the required arguments:
+    ```sh
+    ./run.sh <local_repo_folder> <sonarcloud_project_name> <sonarcloud_jwt_token>
+    ```
+
+    - `<local_repo_folder>`: The local folder of the repository to verify.
+    - `<sonarcloud_project_name>`: The name of the project on SonarCloud.
+    - `<sonarcloud_jwt_token>`: The JWT session token from SonarCloud.
+
+2. The script will:
+    - Run `complexity.sh` and `churn.sh` scripts.
+    - Check if `complexity.json` and `churn.csv` are generated.
+    - Create and activate a virtual environment if it does not exist.
+    - Install the required Python packages.
+    - Run the `plot.py` script to generate and save the plot.
+
+## Setting up dev environment
 1. Clone the repository:
     ```sh
     git clone <repository_url>
@@ -26,22 +43,6 @@ This project is designed to analyze code complexity and churn, and generate visu
     pip install -r requirements.txt
     ```
 
-## Usage
-1. Run the `run.sh` script with the required arguments:
-    ```sh
-    ./run.sh <local_repo_folder> <sonarcloud_project_name> <sonarcloud_jwt_token>
-    ```
-
-    - `<local_repo_folder>`: The local folder of the repository to verify.
-    - `<sonarcloud_project_name>`: The name of the project on SonarCloud.
-    - `<sonarcloud_jwt_token>`: The JWT session token from SonarCloud.
-
-2. The script will:
-    - Run `complexity.sh` and `churn.sh` scripts.
-    - Check if `complexity.json` and `churn.csv` are generated.
-    - Create and activate a virtual environment if it does not exist.
-    - Install the required Python packages.
-    - Run the `plot.py` script to generate and save the plot.
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
