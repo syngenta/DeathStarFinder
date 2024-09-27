@@ -19,7 +19,7 @@ fi
 export PYTHONPATH=$(pwd)/$REPO_DIR
 
 # Run the code
-python $REPO_DIR/gitcodechurn/entry.py $PROJECT_FOLDER --aggregate-file-data --csv > tmp/churn.csv
+python $REPO_DIR/gitcodechurn/entry.py $PROJECT_FOLDER --since-last-year --aggregate-file-data --csv > tmp/churn.csv
 
 echo "Code churn data saved to churn.csv"
 # Deactivate the virtual environment
